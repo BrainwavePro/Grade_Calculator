@@ -1,0 +1,52 @@
+namespace CalculateLetterGrade 
+{
+    public partial class frmCalculateGrade : Form
+    {
+        string letterGrade = "";
+        public frmCalculateGrade()
+        {
+            InitializeComponent();
+        }
+
+        private void btnCalculate_Click(object sender, EventArgs e)
+        {
+            decimal numberGrade =
+        Convert.ToDecimal(txtNumberGrade.Text);
+
+
+            if (numberGrade >= 88)
+            {
+                letterGrade = "A";
+            }
+            else if (numberGrade >= 80 && numberGrade <= 87)
+            {
+                letterGrade = "B";
+            }
+            else if (numberGrade >= 68 && numberGrade <= 79)
+            {
+                letterGrade = "C";
+            }
+            else if (numberGrade >= 60 && numberGrade <= 69)
+            {
+                letterGrade = "D";
+            }
+            else
+            {
+                letterGrade = "F";
+            }
+
+            txtLetterGrade.Text = letterGrade;
+        }
+
+        private void txtLetterGrade_TextChanged(object sender, EventArgs e)
+        {
+
+            txtNumberGrade.Focus();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+}
