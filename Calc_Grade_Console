@@ -1,0 +1,37 @@
+Calculate Grade Console
+
+using System;
+
+namespace CalculateGrade
+{
+    class Program
+    {
+        private static string letterGrade;
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter your grade point:");
+            decimal numberGrade = 
+         Convert.ToDecimal(Console.ReadLine());
+
+            letterGrade = 
+              numberGrade >= 88 ? "A" :
+              numberGrade >= 80 ? "B" :
+              numberGrade >= 68 ? "C" :
+              numberGrade >= 60 ? "D" : "F";
+
+            Console.WriteLine($@"
+============    ============
+|Grade Point    Letter Grade|
+============    ============
+|{numberGrade,-12}   {letterGrade,-3}         |
+============    ============
+Press any key to continue . . .");
+
+
+        }
+
+    }
+}
+
+
